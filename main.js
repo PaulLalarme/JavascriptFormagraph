@@ -28,12 +28,12 @@ function createPage() {
     nav.appendChild(fetchDataButton);
     nav.appendChild(networksButton);
 
-    const subMenu = createAndStyleElement('div', 'sub-menu', `
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    `);
-    nav.appendChild(subMenu);
+    // const subMenu = createAndStyleElement('div', 'sub-menu', `
+    //   <a href="https://twitter.com" target="_blank">Twitter</a>
+    //   <a href="https://facebook.com" target="_blank">Facebook</a>
+    //   <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    // `);
+    // nav.appendChild(subMenu);
 
     const mainContent = createAndStyleElement('div', 'main-content');
     const homeSection = createAndStyleElement('div', 'section active', `
@@ -69,25 +69,25 @@ function createPage() {
         showSection(aboutSection);
         closeSubMenu();
     });
-    fetchDataButton.addEventListener('click', () => {
-        showSection(dataSection);
-        fetchData();
-        closeSubMenu();
-    });
+    // fetchDataButton.addEventListener('click', () => {
+    //     showSection(dataSection);
+    //     fetchData();
+    //     closeSubMenu();
+    // });
 
     networksButton.addEventListener('click', (event) => {
         event.stopPropagation();
         subMenu.classList.toggle('active');
     });
 
-    document.addEventListener('click', (event) => {
-        if (!nav.contains(event.target)) {
-            subMenu.classList.remove('active');
-        }
-    });
+    // document.addEventListener('click', (event) => {
+    //     if (!nav.contains(event.target)) {
+    //         subMenu.classList.remove('active');
+    //     }
+    // });
 
-    const counterElement = document.getElementById('counter');
-    setupCounter(counterElement);
+    // const counterElement = document.getElementById('counter');
+    // setupCounter(counterElement);
 }
 
 function showSection(section) {
